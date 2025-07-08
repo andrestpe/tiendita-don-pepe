@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel Deudores - Mini Supermercado</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="panel-styles.css" />
+  <style>
+    /* Estilo rápido para el buscador */
+    .search-container {
+      margin-bottom: 10px;
+    }
+    .search-container input {
+      padding: 5px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <script>
+    if(sessionStorage.getItem('loggedIn') !== 'true') {
+      alert('Debes iniciar sesión primero');
+      window.location.href = 'login.html';
+    }
+  </script>
+  
+  <header>
+    <h1>Tiendita Pepito - Panel de Deudores</h1>
+    <div class="search-container">
+  <input type="text" id="buscarInput" placeholder="Buscar por nombre o estado">
+</div>
+  </header>
+  
+  <div class="main-container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <ul>
+        <li class="active" data-section="pendientes">Pendientes</li>
+        <li data-section="pagados">Pagados</li>
+        <li data-section="nuevos">Nuevos Deudores</li>
+      </ul>
+    </nav>
+  
+    <!-- Content -->
+    <section class="content">
+      
+      <!-- Pendientes -->
+      <div id="pendientes" class="section active">
+        <h2>Deudores Pendientes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre Deudor</th>
+              <th>Productos</th>
+              <th>Monto</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="pendientesBody"></tbody>
+        </table>
+      </div>
+  
+      <!-- Pagados -->
+      <div id="pagados" class="section">
+        <h2>Deudores Pagados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre Deudor</th>
+              <th>Productos</th>
+              <th>Monto</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="pagadosBody"></tbody>
+        </table>
+      </div>
+  
+      <!-- Nuevos Deudores -->
+      <div id="nuevos" class="section">
+        <h2>Agregar Nuevo Deudor</h2>
+        <form id="nuevoDeudorForm">
+          <label for="nombreDeudor">Nombre Deudor</label>
+          <input type="text" id="nombreDeudor" name="nombreDeudor" required />
+  
+          <label for="productos">Productos</label>
+          <input type="text" id="productos" name="productos" placeholder="Ej: Arroz, Azúcar" required />
+  
+          <label for="monto">Monto (S/)</label>
+          <input type="number" id="monto" name="monto" min="0" required />
+  
+          <button type="submit">Generar nuevo deudor</button>
+        </form>
+      </div>
+  
+    </section>
+  </div>
+  
+  <script src="panel.js"></script>
+  
+  </body>
+  </html>

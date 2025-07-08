@@ -1,0 +1,187 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #2980b9;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 80px);
+}
+
+.sidebar {
+  background-color: #2c3e50;
+  width: 220px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  color: #bdc3c7;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  border-left: 4px solid transparent;
+  transition: background-color 0.3s ease, border-left 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #34495e;
+}
+
+.sidebar ul li.active {
+  background-color: #2980b9;
+  color: white;
+  border-left: 4px solid #e67e22;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #2980b9;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  background-color: #2980b9;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+select {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1.5px solid #ccc;
+  font-size: 14px;
+}
+
+select:hover, select:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+.btn {
+  background-color: #049735;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bot {
+  background-color: #c0392b;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d1e233;
+}
+
+.bot:hover {
+  background-color: #992d22;
+}
+
+form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+button[type="submit"] {
+  background-color: #2980b9;
+  color: white;
+  font-weight: 700;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #1c5980;
+}
